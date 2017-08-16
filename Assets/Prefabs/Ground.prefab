@@ -22,9 +22,7 @@ GameObject:
   - component: {fileID: 33043180734714660}
   - component: {fileID: 23242556556055128}
   - component: {fileID: 61929553111260522}
-  - component: {fileID: 114862901602487770}
   - component: {fileID: 50900025553975036}
-  - component: {fileID: 114515203074636178}
   m_Layer: 12
   m_Name: Ground
   m_TagString: Untagged
@@ -178,7 +176,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281696662929864}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -216,31 +214,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0000001}
   m_EdgeRadius: 0
---- !u!114 &114515203074636178
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1281696662929864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c1e1e7be0fec742b09dcbc80ad3d41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinSpawns:
-  - {fileID: 4634735531654216}
-  - {fileID: 4200414549559118}
-  - {fileID: 4343904857548678}
-  coin: {fileID: 1530508966430284, guid: 00cced923768f0b48b982d08ca43bb51, type: 2}
---- !u!114 &114862901602487770
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1281696662929864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a12e830469538d4ebb03f669075e0be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 3
