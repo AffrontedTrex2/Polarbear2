@@ -2,10 +2,14 @@
 using UnityEngine.UI;
 using System.Collections;
 
+
+
 public class Health : MonoBehaviour
 {
-    public int startingHealth = 5;
-    public int currentHealth;
+
+    public static int startingHealth = 5;
+
+    public static int currentHealth;
     public Sprite[] heartsLeft;
     public Image HeartUI;
 
@@ -13,7 +17,11 @@ public class Health : MonoBehaviour
     {
         currentHealth = startingHealth;
         HeartUI.sprite = heartsLeft[currentHealth];
-        Debug.Log(currentHealth);
+        Debug.Log("Health: " + currentHealth);
+        for (int i = 0; i < heartsLeft.Length; i++)
+        {
+            Debug.Log(heartsLeft[i]);
+        }
     }
 
 
@@ -25,9 +33,15 @@ public class Health : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
-        currentHealth = 5;
+        Debug.Log("ChangeHealth called");
+        Debug.Log("HealthBefore: " + currentHealth);
         currentHealth += amount;
-        Debug.Log(currentHealth);
-        HeartUI.sprite = heartsLeft[4];
+        Debug.Log("Health: " + currentHealth);
+        Debug.Log("Length: " + heartsLeft.Length);
+        for (int i = 0; i < heartsLeft.Length; i++)
+        {
+            Debug.Log(heartsLeft[i]);
+        }
+        //HeartUI.sprite = heartsLeft[currentHealth];
     }
 }

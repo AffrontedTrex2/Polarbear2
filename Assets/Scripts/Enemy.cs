@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public Health health;
+    private bool hasCollided = false;
 
     // Use this for initialization
     void Awake ()
@@ -19,10 +20,15 @@ public class Enemy : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("a");
         if (collision.gameObject.CompareTag("Player"))
         {
-            health.ChangeHealth(-1);
-            Destroy(gameObject);
+            if (!hasCollided)
+            {
+                hasCollided = true;
+                health.ChangeHealth(-1);
+                Destroy(gameObject);
+            }
         }
     }
 }
