@@ -7,16 +7,16 @@ using System.Collections;
 public class Health : MonoBehaviour
 {
 
-    public static int startingHealth = 3;
-    public static int currentHealth;
-    public Transform[] heartsLeft;
+    public int startingHealth = 3;
+    public int currentHealth;
+    public GameObject[] heartsLeft;
 
     void Start()
     {
         currentHealth = startingHealth;
         for (int i = 0; i < currentHealth; i++)
         {
-            heartsLeft[i].GetComponent<Renderer>().enabled = true;
+            heartsLeft[i].GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
@@ -31,9 +31,10 @@ public class Health : MonoBehaviour
     {
         currentHealth += amount;
 
-        for (int i = startingHealth; i > currentHealth; i--)
+        for (int i = startingHealth - 1; i > currentHealth - 1; i--)
         {
-            heartsLeft[i - 1].GetComponent<Renderer>().enabled = false;
+            GameObject heartObj = heartsLeft[i];
+            heartObj.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }
